@@ -1,7 +1,15 @@
+import { useState } from "react"
 import GradientBlinds from "@/components/GradientBlinds"
 import Navbar from "@/components/Navbar"
 
 const Index = () => {
+  const [form, setForm] = useState({ name: "", phone: "", comment: "" })
+  const [sent, setSent] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSent(true)
+  }
   return (
     <main className="relative min-h-screen overflow-hidden">
       <Navbar />
@@ -107,6 +115,70 @@ const Index = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
+        <section id="contacts" className="relative z-10 px-5 sm:px-20 py-24">
+          <div className="max-w-xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4 drop-shadow-lg">
+              Оставить заявку
+            </h2>
+            <p className="text-white/70 text-center mb-10 text-lg">
+              Укажите марку авто и нужный блок — мы подберём и свяжемся с вами
+            </p>
+
+            {sent ? (
+              <div className="rounded-2xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm p-10 text-center">
+                <div className="text-5xl mb-4">✅</div>
+                <h3 className="text-white text-2xl font-bold mb-2">Заявка отправлена!</h3>
+                <p className="text-white/70">Мы свяжемся с вами в ближайшее время.</p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col gap-5 shadow-2xl"
+              >
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-white/80 text-sm font-medium">Ваше имя</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Иван Иванов"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 outline-none focus:border-blue-400 focus:bg-white/15 transition-all"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-white/80 text-sm font-medium">Телефон</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+7 (___) ___-__-__"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    className="rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 outline-none focus:border-blue-400 focus:bg-white/15 transition-all"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-white/80 text-sm font-medium">Марка авто и нужный ЭБУ</label>
+                  <textarea
+                    rows={3}
+                    placeholder="Например: Toyota Camry 2015, ЭБУ двигателя 2GR-FE"
+                    value={form.comment}
+                    onChange={(e) => setForm({ ...form, comment: e.target.value })}
+                    className="rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 outline-none focus:border-blue-400 focus:bg-white/15 transition-all resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-4 text-lg transition-all duration-200 shadow-lg hover:-translate-y-0.5"
+                >
+                  Отправить заявку
+                </button>
+              </form>
+            )}
           </div>
         </section>
       </div>
