@@ -52,6 +52,63 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Catalog Section */}
+        <section id="catalog" className="relative z-10 px-5 sm:px-20 py-24">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4 drop-shadow-lg">
+              Популярные позиции
+            </h2>
+            <p className="text-white/70 text-center mb-12 text-lg">
+              Оригинальные и восстановленные ЭБУ в наличии с гарантией
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  img: "https://cdn.poehali.dev/projects/94d7c2af-080f-43d4-9cd1-0dd900ad3617/files/993ae8f0-f5b9-4e04-96a0-04685e3bdb5c.jpg",
+                  title: "ЭБУ двигателя",
+                  desc: "Блок управления двигателем. Подходит для большинства марок.",
+                  price: "от 4 500 ₽",
+                },
+                {
+                  img: "https://cdn.poehali.dev/projects/94d7c2af-080f-43d4-9cd1-0dd900ad3617/files/d9fb7701-01fe-4203-8d85-c17cf89824aa.jpg",
+                  title: "Модуль управления АКПП",
+                  desc: "Электронный блок управления автоматической коробкой передач.",
+                  price: "от 6 200 ₽",
+                },
+                {
+                  img: "https://cdn.poehali.dev/projects/94d7c2af-080f-43d4-9cd1-0dd900ad3617/files/e397ffa2-63df-47db-b977-c871b791206b.jpg",
+                  title: "Блок ABS / ESP",
+                  desc: "Контроллер системы антиблокировки и стабилизации.",
+                  price: "от 3 800 ₽",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 shadow-xl cursor-pointer"
+                >
+                  <div className="h-52 overflow-hidden">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-white font-semibold text-lg mb-1">{item.title}</h3>
+                    <p className="text-white/60 text-sm mb-4">{item.desc}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-blue-400 font-bold text-xl">{item.price}</span>
+                      <button className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors">
+                        Заказать
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   )
