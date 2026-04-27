@@ -41,31 +41,31 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </div>
-            <span className="text-white font-semibold text-lg">DataPulse</span>
+            <span className="text-white font-semibold text-lg">ЭБУ Маркет</span>
           </div>
         </a>
 
         <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white/70 transition duration-200 hover:text-white md:flex md:space-x-2">
-          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#features">
-            <span className="relative z-20">Возможности</span>
+          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#catalog">
+            <span className="relative z-20">Каталог</span>
           </a>
-          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#pricing">
-            <span className="relative z-20">Тарифы</span>
+          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#brands">
+            <span className="relative z-20">Бренды</span>
           </a>
-          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#integrations">
-            <span className="relative z-20">Интеграции</span>
+          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#warranty">
+            <span className="relative z-20">Гарантия</span>
           </a>
-          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#docs">
-            <span className="relative z-20">Документация</span>
+          <a className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer" href="#contacts">
+            <span className="relative z-20">Контакты</span>
           </a>
         </div>
 
         <div className="flex items-center gap-3">
           <a
-            href="#demo"
+            href="#catalog"
             className="rounded-lg font-medium relative cursor-pointer hover:-translate-y-0.5 transition-all duration-200 inline-block text-center px-4 py-2 text-sm border bg-gradient-to-r from-blue-600 to-indigo-600 border-blue-400/30 text-white hover:from-blue-500 hover:to-indigo-500"
           >
-            Попробовать бесплатно
+            Подобрать ЭБУ
           </a>
         </div>
       </header>
@@ -88,7 +88,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
-          <span className="text-white font-semibold">DataPulse</span>
+          <span className="text-white font-semibold">ЭБУ Маркет</span>
         </a>
 
         <button
